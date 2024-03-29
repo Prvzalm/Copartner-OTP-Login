@@ -45,7 +45,7 @@ app.post("/generate-otp", async (req, res) => {
 
 app.post("/verify-otp", async (req, res) => {
   const { otp } = req.body;
-  const { phoneNumber } = req.params;
+  const { phoneNumber } = req.query;
 
   try {
     const user = await User.findOne({ phoneNumber });
